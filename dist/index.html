@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#fff0dd"><meta name="description" content="A colorful Brick Breaker arcade game. Play 12 stages across four worlds, with guardian bosses at levels 3, 6, 9 and 12.">
+<title>BRICK BREAKER — uniquegames</title><link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="theme.css">
+</head>
+<body data-theme="meadow">
+<div class="arcade-background" aria-hidden="true">
+<div class="arcade-orbit orbit-one"></div><div class="arcade-orbit orbit-two"></div>
+<i class="floating-brick"></i><i class="floating-brick"></i><i class="floating-brick"></i><i class="floating-brick"></i><i class="floating-brick"></i><i class="floating-brick"></i><i class="floating-brick"></i><i class="floating-brick"></i>
+<span class="arcade-spark spark-one">✦</span><span class="arcade-spark spark-two">✦</span><span class="arcade-spark spark-three">✦</span>
+</div>
+<div class="app">
+<header class="header">
+<button class="brand" id="home" aria-label="Main menu"><span class="brand-icon"><i></i><i></i><i></i></span><span>BRICK<span class="brand-light">BREAKER</span></span></button>
+<div class="header-actions"><button class="icon-button" id="sound" aria-label="Mute sound" aria-pressed="true" title="Mute sound"><svg class="sound-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4 5 9H2v6h3l6 5Z"/><path d="M15 8a6 6 0 0 1 0 8m3-11a10 10 0 0 1 0 14"/></svg><span>SOUND ON</span></button><button class="icon-button" id="pause" aria-label="Pause game" hidden>Ⅱ <span>PAUSE</span></button></div>
+</header>
+<main>
+<section id="menuPage" class="page menu-page" aria-label="Main menu">
+<div class="menu-art" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+<div class="eyebrow">FOUR WORLDS · TWELVE STAGES</div>
+<h1>BRICK<br><span>BREAKER</span></h1>
+<p class="screen-copy">Find your angle. Make every bounce count.</p>
+<nav class="menu-actions" aria-label="Game menu">
+<button id="play" class="primary-button">LET’S PLAY <span>→</span></button>
+<button id="levels" class="secondary-button">LEVELS <span>01—12</span></button>
+<button id="about" class="secondary-button">ABOUT <span>?</span></button>
+<button id="quit" class="secondary-button">QUIT <span>↗</span></button>
+</nav>
+<p class="studio-credit">A GAME BY <strong>uniquegames</strong></p>
+<div class="menu-best">YOUR BEST <strong id="menuBest">000000</strong></div><p id="menuStars" class="menu-stars">0 / 36 STARS</p>
+</section>
+<section id="levelsPage" class="page detail-page" aria-label="Choose a level" hidden>
+<div class="eyebrow">ALL 12 LEVELS UNLOCKED</div><h2>CHOOSE A LEVEL<span>.</span></h2>
+<p class="screen-copy">Choose any level to test it. Boss fights: Levels 3, 6, 9 and 12. Every two normal stages lead to a boss. Earn 3 stars with no lives lost, 2 with one lost, or 1 with two or more. Records stay on this browser.</p>
+<div class="level-grid" id="levelGrid" tabindex="-1"></div><button class="text-button menu-button">← BACK TO MENU</button>
+</section>
+<section id="aboutPage" tabindex="-1" class="page detail-page" aria-label="About the game" hidden>
+<div class="eyebrow">FIND YOUR ANGLE</div><h2>HOW TO PLAY<span>.</span></h2>
+<div class="about-content"><p class="studio-about">Created by <strong>uniquegames</strong> · Four worlds, twelve stages, four guardians.</p><p>Break every colored brick. Keep the ball above your paddle. You start each run with three lives.</p>
+<div class="about-section"><h3>Controls</h3><p><b>Desktop:</b> ← / → or A / D to move. Mouse movement also works. Space launches the ball. P or Escape pauses.</p><p><b>Mobile:</b> Slide your finger left or right in the control area below the board to move without covering the paddle. You can also drag on the board. Tap either area to launch. Use the pause button to take a break.</p></div>
+<div class="about-section"><h3>Bricks & combos</h3><p>Normal bricks break in one hit. Armored bricks take two or three hits. Steel bricks cannot break and do not count toward clearing a level. Bonus bricks can drop a boost.</p><p>Break consecutive bricks before touching the paddle to build a combo up to ×4.</p></div>
+<div class="about-section"><h3>Four worlds · twelve stages</h3><p>Levels 1–3: Meadow, an easy introduction. Levels 4–6: Ocean, learn switch gates and gently moving rows. Levels 7–9: Snow, add two-hit armor. Levels 10–12: Space, combine familiar mechanics with a moderate final challenge. Each world has two normal stages and a guardian at Level 3, 6, 9 or 12. The scenery, animation and colors change after each world.</p><p>Bosses take 6, 9, 9 and 12 hits respectively. Hit the glowing section; the weak spot moves left → center → right when its health pips run out. Shielded sections reflect the ball. Difficulty rises gradually from easy to medium, with a small increase for the final two stages.</p><h3>Stars & run missions</h3><p>Each cleared level earns 1–3 stars based on lives lost during that level: zero losses = 3 stars, one = 2, two or more = 1. Catching extra lives does not erase losses. Your highest star rating and best score for each level are saved separately.</p><p>Every new run has three missions: collect 3 boosts, reach a ×4 combo, and clear any level without losing a life. Open Pause to check progress. Missions carry across levels and reset on Play Again or a new run.</p></div><div class="about-section"><h3>Catch a boost</h3><div id="boostGuide" class="boost-guide"></div></div>
+</div><button class="text-button menu-button">← BACK TO MENU</button>
+</section>
+<section id="quitPage" tabindex="-1" class="page detail-page exit-page" hidden><div class="eyebrow">RUN ENDED</div><h2>SEE YOU<br>NEXT ROUND<span>.</span></h2><p class="screen-copy">You can close this browser tab.<br>Your high score and unlocked levels are saved.</p><button class="primary-button menu-button">BACK TO MENU <span>↩</span></button></section>
+<section id="gamePage" class="game-page" aria-label="Gameplay" hidden>
+<section class="hud" aria-label="Game statistics">
+<div class="stat"><span>SCORE</span><strong id="score">000000</strong></div>
+<div class="stat"><span>BEST</span><strong id="best">000000</strong></div>
+<div class="stat"><span>LEVEL</span><strong><b id="level">01</b><small> / 12</small></strong></div>
+<div class="stat"><span>LIVES</span><strong id="lives" class="lives">♥ ♥ ♥</strong></div>
+<div class="stat combo-stat"><span>COMBO</span><strong id="combo">×1</strong></div>
+</section>
+<section class="game-shell" aria-label="Brick Breaker play area">
+<div class="board-top"><span><i></i> <b id="stageLabel">01 — MEADOW</b></span><span id="remaining">READY TO PLAY</span></div>
+<div class="canvas-wrap" id="playArea">
+<canvas id="canvas" width="720" height="800" tabindex="0" aria-label="Use arrows or A and D to move, Space to launch, P to pause."></canvas>
+<div id="overlay" class="overlay" hidden>
+<div id="paused" class="screen"><div class="eyebrow">TAKE A BREATHER</div><h2>PAUSED<span>.</span></h2><div class="mission-panel"><h3>THIS RUN · MISSIONS</h3><div id="runMissions"></div></div><button id="resume" class="primary-button">KEEP PLAYING <span>→</span></button><button class="text-button menu-button">BACK TO MENU</button></div>
+<div id="complete" class="screen"><div class="eyebrow" id="completeEyebrow">STAGE CLEARED</div><h2 id="completeTitle">LEVEL<br>COMPLETE<span>!</span></h2><p class="screen-copy" id="completeCopy"></p><div id="levelStars" class="result-stars" aria-label="Star rating"></div><p id="ratingCopy" class="rating-copy"></p><div class="result-score"><span>LEVEL SCORE</span><strong id="levelScore">0</strong></div><button id="next" class="primary-button">NEXT LEVEL <span>→</span></button><p class="countdown" id="countdown"></p></div>
+<div id="gameover" class="screen"><div class="eyebrow" id="overEyebrow">ONE MORE TRY?</div><h2 id="overTitle">GAME<br>OVER<span>.</span></h2><div class="result-score"><span>FINAL SCORE</span><strong id="finalScore">0</strong></div><p class="screen-copy">PERSONAL BEST <b id="finalBest">0</b></p><p class="rating-copy" id="missionSummary"></p><button id="restart" class="primary-button">PLAY AGAIN <span>↻</span></button><button class="text-button menu-button">BACK TO MENU</button></div>
+</div>
+<div id="launchHint" class="launch-hint" hidden><span id="launchText">PRESS SPACE OR TAP TO LAUNCH</span><span class="hint-arrow">↓</span></div>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<div id="activeEffects" class="active-effects" aria-label="Active power-ups"></div>
+</div>
+<div class="board-bottom"><span><kbd>SPACE</kbd> LAUNCH <em>·</em> <kbd>P</kbd> PAUSE</span><span>DRAG TO MOVE · TAP TO LAUNCH</span></div>
+</section>
+<div id="touchControls" class="touch-controls" role="group" aria-label="Paddle touch controls. Slide left or right to move. Tap to launch.">
+<span class="touch-control-arrows" aria-hidden="true">← <i></i> →</span>
+<strong>SLIDE HERE TO MOVE</strong><span>Keep your finger below the board · Tap to launch</span>
+</div>
+</section>
+</main>
+</div>
+<script type="module" src="js/main.js"></script>
+</body></html>
